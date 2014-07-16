@@ -7,10 +7,10 @@ b) parse the values, create the date/time in server and using time formating ide
 
 all additional code must be in lib folder with tests
 
-c) add th,st,nd as appropriate with your year
+c) add th,st,nd as appropriate with your year....
 
 d) also show the day in your mother tongue
 
-e) show your year as roman
+e) show your year as roman...
 
-f) pronounce your year as digits as well
+f) pronounce your year as digits as well....
