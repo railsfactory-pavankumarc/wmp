@@ -1,6 +1,6 @@
 class Spell_digit
 
-def self.convert(num)
+def convert(num)
 n=num.to_i
 if n>0 and n<10
 a=ones(n)
@@ -16,19 +16,21 @@ elsif n>99999 and n<1000000
 a=lakhs(n)
 elsif n>999999 and n<10000000
 a=tlakhs(n)
-else n==10000000
+elsif n==10000000
 a="one crore"
+else
+a="year in words"
 end
 return a
 end
 
 
-def self.ones(n)
+def ones(n)
 s1 = comp(n) 
 return s1
 end
 
-def self.tens(n)
+def tens(n)
 if n%10==0 
 s1=comp(n)
 return s1
@@ -44,7 +46,7 @@ return s2+s1
 end
 end
 
-def self.hundreds(n)
+def hundreds(n)
 if n%100==0
 a=n%100
 s=tens(a)
@@ -69,7 +71,7 @@ end
 end
 end
 
-def self.thousands(n)
+def thousands(n)
 if n%1000==0
 n=n/1000
 s1=comp(n)
@@ -86,7 +88,7 @@ return s1+s2+s
 end
 end
 
-def self.tthousands(n)
+def tthousands(n)
 if n%10000==0
 n=n/10000
 s1=comp(n)
@@ -103,7 +105,7 @@ return s1+s2+s
 end
 end
 
-def self.lakhs(n)
+def lakhs(n)
 if n%100000==0
 n=n/100000
 s1=comp(n)
@@ -120,7 +122,7 @@ return s1+s2+s
 end
 end
 
-def self.tlakhs(n)
+def tlakhs(n)
 if n%1000000==0
 n=n/1000000
 s1=comp(n)
@@ -138,7 +140,7 @@ end
 end
 
 
-def self.comp(number)
+def comp(number)
 if number ==0
 ""
 elsif number == 1

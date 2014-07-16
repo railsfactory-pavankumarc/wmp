@@ -1,6 +1,6 @@
 class Numbers
 
-def self.convert(num)
+def convert(num)
 n=num.to_i
 if n < 10
 s=comp(n)
@@ -12,7 +12,7 @@ return "#{n}"+s
 end    
 end
 
-def self.comp(number)
+def comp(number)
 if number ==1
 'st'
 elsif number ==2

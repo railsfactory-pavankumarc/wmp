@@ -1,9 +1,9 @@
 class Roman
 
-  def self.convert(num)
+  def convert(num)
 number=num.to_i
           if (number < 1 || number > 4000)
-        return "Invalid Roman Number Value"
+        return "Roman Number of the year"
     end
     String s = ""
   a = [1000,500,100,50,10,9,5,4,3,2,1]
