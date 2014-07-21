@@ -1,0 +1,10 @@
+<h2>these are the list of databases</h2>
+<p>select the database to see the description</p>
+<ol>
+<% @a.each do |p| %>
+
+<li><a href="/action1?db_name=<%=p.values.first %>"> <%=p.values.first %> </a></li>
+
+<% end %>
+</ol>
+<br/>
