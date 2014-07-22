@@ -1,0 +1,29 @@
+<h2> Description of the  <%=$t %> table  </h2>
+<ol>
+<% @r.each do |s| %>
+
+<li> <%=s %> </li><br/>
+
+<% end %>
+</ol>
+<br/>
+<% c = 0 %>
+
+<h2> Content of the  <%=$t %> table  </h2>
+<% @res.each do |key,values| %>
+<table border ="2">
+	<% if c == 0 %>
+	 <tr><th> <%=key.keys %> </th></tr>
+     <% c = c+ 1 %>
+    <% else %>
+     <tr> <td> <%=key.values %> </td></tr>
+    <% end %>
+ <% end %>
+</table>
+
+<h4>Choose the operations to be performed</h4>
+<ul>
+<li><a href="/insert_content">INSERT</a></li><br>
+<li><a href="/modify_content">MODIFY</a></li><br>
+<li><a href="/delete_content">DELETE</a></li><br>
+</ul>

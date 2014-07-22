@@ -26,13 +26,20 @@ get '/show_database' do
 end
 
 get '/action1' do
-     @d = params[:db_name]
-     client.query("use #{@d}")
+     $d = params[:db_name]
+     client.query("use #{$d}")
      @res = client.query("show tables")
      erb :use
 end
 
 get '/action2' do
-	@t=params[:tb_name]
-    @res=client.query("select * from #{@t}")
-    
+	$t=params[:tb_name]
+    @r=client.query("desc #{$t}")
+    @res=client.query("select * from #{$t}")
+    erb :showt
+end
+
+get '/insert_content' do
+ @b = client.query("SELECT COUNT(*) FROM INFORMATION_SCHEMA.COLUMNS WHERE table_schema = '#{$d}' AND table_name = '#{$t}';")
+erb :insert
+end
