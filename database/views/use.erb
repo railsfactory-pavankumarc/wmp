@@ -1,7 +1,9 @@
-
 <h1>Tables in <%=$d %> database </h1>
 <ol>
 <% @res.each do |m| %>
 <li><a href = "/action2?tb_name=<%=m.values.first %>"><%=m.values.first %></li><br>
 <% end %>
 </ol>
+<br>
+<br>
+<a href = "/show_database" >click here to go back to previous page</a>

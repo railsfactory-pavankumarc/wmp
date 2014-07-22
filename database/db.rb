@@ -5,8 +5,8 @@ require 'sinatra'
 
 @db_host  = "localhost"
 @db_user  = "root"
-@db_pass  = "123"
-@db_name = "ruby"
+@db_pass  = "root"
+@db_name = "student"
 client = Mysql2::Client.new(:host => @db_host, :username => @db_user, :password => @db_pass, :database => @db_name)
 
 configure do
@@ -43,3 +43,26 @@ get '/insert_content' do
  @b = client.query("SELECT COUNT(*) FROM INFORMATION_SCHEMA.COLUMNS WHERE table_schema = '#{$d}' AND table_name = '#{$t}';")
 erb :insert
 end
+
+get '/create_db' do
+    erb :createdb
+end
+
+post '/create_db' do
+@p=params[:database]
+client.query("create database #{@p}")
+redirect '/create_db'
+end
+
+
+get '/drop_db' do
+    erb :dropdb
+end
+
+post '/drop_db' do
+@q=params[:database]
+client.query("use #{@q}")
+client.query("drop database #{@q}")
+redirect '/drop_db'
+end
+
