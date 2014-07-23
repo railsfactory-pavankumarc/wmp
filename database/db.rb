@@ -8,7 +8,7 @@ require 'sinatra'
 @db_pass  = "root"
 @db_name = "student"
 client = Mysql2::Client.new(:host => @db_host, :username => @db_user, :password => @db_pass, :database => @db_name)
-
+@t = ""
 configure do
   set :views, "#{File.dirname(__FILE__)}/views"
 end
@@ -31,6 +31,7 @@ get '/action1' do
      @res = client.query("show tables")
      erb :use
 end
+
 
 get '/action2' do
 	$t=params[:tb_name]
@@ -64,5 +65,38 @@ post '/drop_db' do
 client.query("use #{@q}")
 client.query("drop database #{@q}")
 redirect '/drop_db'
+end
+
+get '/create_tb' do
+    erb :createtb
+end
+
+post '/create_tb' do
+@r=params[:table]
+@t=params[:inp]
+client.query("create table #{@r}#{@t}")
+redirect '/create_tb'
+end
+
+
+get '/drop_tb' do
+    erb :droptb
+end
+
+post '/drop_tb' do
+@s=params[:drop]
+client.query("drop table #{@s}")
+redirect '/drop_tb'
+end
+
+get '/insert_values' do
+@f = $t
+    erb :inserttb
+end
+
+post '/insert_values' do
+    @e=params[:ins]
+    client.query("insert into #{$t} values #{@e}")
+    redirect '/insert_values'
 end
 
