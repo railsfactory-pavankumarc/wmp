@@ -90,13 +90,19 @@ redirect '/drop_tb'
 end
 
 get '/insert_values' do
-@f = $t
+@m=client.query("desc #{$t}")
+
     erb :inserttb
 end
 
-post '/insert_values' do
-    @e=params[:ins]
-    client.query("insert into #{$t} values #{@e}")
-    redirect '/insert_values'
+#post '/insert_values' do
+    
+    #   client.query("insert into #{$t} values #{@e}")
+ #   redirect '/insert_values'
+#end
+
+get '/query_s' do
+    $e=params.to_hash
+    erb :query
 end
 

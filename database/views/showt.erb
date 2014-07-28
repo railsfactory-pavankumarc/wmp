@@ -1,14 +1,19 @@
 <h2> Description of the  <%=$t %> table  </h2>
-<ol>
-<% @r.each do |s| %>
-
-<li> <%=s %> </li><br/>
-
+<% d = 0 %>
+<% @r.each do |key1,values| %>
+<table border="2">
+<% if d == 0 %>
+<tr><th><%=key1.keys %></th></tr>
+<% d = d + 1 %>
+<% else %>
+<tr><td><%= key1.values %></td></tr>
 <% end %>
-</ol>
-<br/>
-<% c = 0 %>
+<% end %>
+</table>
 
+<br/>
+
+<% c = 0 %>
 <h2> Content of the  <%=$t %> table  </h2>
 <% @res.each do |key,values| %>
 <table border ="2">

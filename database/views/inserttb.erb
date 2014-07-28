@@ -1,8 +1,8 @@
-<br>
+<% @m.each do |m| %>
+   <form action='/query_s' method='post'>
+   <%=m.values.first %><input type ="text" name ="name"><br/>
+          <% end %>
+              <input type="submit" value="submit">
+      </form>
 
-<br>
-<form action="/insert_values" method="post">
-Insert the values into the table <%=@f %>: <input type="text" name="ins">
-<input type="submit" value="submit">
-</form><br><br>
-<a href="/show_database">Click here to see the databases present</a>
+    <br/>
