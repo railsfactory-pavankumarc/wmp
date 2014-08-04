@@ -1,0 +1,18 @@
+<h1>Add a new post</h1>
+<%= form_for @posts,:url => { :action => "create" } do |f| %>
+<% if @posts.errors.any? %>
+<h2>Errors:</h2>
+<ul>
+	<% @posts.errors.full_messages.each do |message| %>
+	<li><%= message %></li>
+<% end %>
+</ul>
+<% end %>
+<p><%= f.label :title %>
+<%= f.text_field :title %>
+</p>
+<p><%= f.label :content %>
+<%= f.text_area :content %>
+</p>
+<p><%= f.submit "Add a new post" %></p>
+<% end %>
