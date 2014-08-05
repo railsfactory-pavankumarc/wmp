@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 def index
-@posts = Post.all
+@posts = Post.where(user_id:current_user.id)
 end
 def show
 @posts = Post.find(params[:id])
@@ -10,6 +10,7 @@ def new
 end
 def create
 	 @posts = Post.new(params[:post].permit('title','content'))
+	 @posts.user=current_user
 	if @posts.save
 		redirect_to posts_path, :notice => "your post was saved"
 	else
