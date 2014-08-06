@@ -37,5 +37,9 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
+#devise gem for user login
 gem 'devise'
+#carrierwave gem for uploading image
+#gem 'carrierwave'
+gem 'paperclip'
+gem 'rmagick'

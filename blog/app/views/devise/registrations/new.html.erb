@@ -2,7 +2,7 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-
+  
   <div><%= f.label :username %><br />
   <%= f.text_field :username %> </div>
 
@@ -19,6 +19,10 @@
 <%= f.radio_button(:gender, 'Female', :class => 'form-control radio-inline') %>Female
 
   </div>
+<div> <%= f.label :icon %>
+  <%= f.file_field :icon %>
+  
+</div>
 
   <div><%= f.submit "Sign up" %></div>
 <% end %>
