@@ -42,4 +42,7 @@ gem 'devise'
 #carrierwave gem for uploading image
 #gem 'carrierwave'
 gem 'paperclip'
-gem 'rmagick'
+
+group :development do
+	gem 'rails_layout'
+end
