@@ -1,4 +1,5 @@
 class Post < ActiveRecord::Base
+has_many :comments
 	belongs_to :user
   #attr_accessor :title, :content
 validates :title, :content, :presence => true

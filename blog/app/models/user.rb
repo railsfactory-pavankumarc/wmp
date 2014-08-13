@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  
 	has_many :posts
 	has_attached_file :icon, :styles => { :medium => "300x300>", :thumb => "100x100>" }
 	  # Include default devise modules. Others available are:

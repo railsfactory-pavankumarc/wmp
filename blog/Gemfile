@@ -43,6 +43,10 @@ gem 'devise'
 #gem 'carrierwave'
 gem 'paperclip'
 
-group :development do
-	gem 'rails_layout'
+gem 'draper'
+gem 'acts_as_commentable'
+group :development, :test do
+  gem 'rspec-rails'
 end
+gem 'simple_form'
+gem 'bootstrap-sass'
