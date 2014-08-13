@@ -12,6 +12,7 @@ def create
 	 @posts = Post.new(params[:post].permit('title','content'))
 	 @posts.user=current_user
 	if @posts.save
+		
 		redirect_to posts_path, :notice => "your post was saved"
 	else
 		render "new"
