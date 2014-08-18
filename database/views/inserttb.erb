@@ -1,6 +1,10 @@
+<% @i=0 %>
+
 <% @m.each do |m| %>
-   <form action='/query_s' method='post'>
-   <%=m.values.first %><input type ="text" name ="name"><br/>
+   <form action='/query_s' >
+   	        	      <% @i= @i+1 %>
+   <%=m.values.first %><input type ="text" name ="a<%=@i %>"><br/>
+                
           <% end %>
               <input type="submit" value="submit">
       </form>

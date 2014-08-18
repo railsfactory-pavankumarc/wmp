@@ -2,11 +2,14 @@ require "mysql2"
 require 'rubygems'
 require 'bundler/setup'
 require 'sinatra'
+require './sql'
+
+
 
 @db_host  = "localhost"
 @db_user  = "root"
 @db_pass  = "root"
-@db_name = "student"
+@db_name = "stud"
 client = Mysql2::Client.new(:host => @db_host, :username => @db_user, :password => @db_pass, :database => @db_name)
 @t = ""
 configure do
@@ -102,7 +105,12 @@ end
 #end
 
 get '/query_s' do
-    $e=params.to_hash
+    str = ""
+     i = 0
+    @e = params.to_hash
+    t = Sql.new
+    @res = t.sql(@e)
     erb :query
+
 end
 

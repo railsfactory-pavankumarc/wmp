@@ -1,0 +1,6 @@
+<h1>Welcome to todo application</h1>
+<% @tasks.each do |p| %>
+<h2><%=link_to task.title , task %></h2>
+<p><%=task.content %></p>
+<hr />
+<% end %>

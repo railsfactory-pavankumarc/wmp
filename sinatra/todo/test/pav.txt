@@ -1,4 +1,2 @@
-hello #undone
-hi #done
-hello #undone
-hi #done
+hello #undone#undone
+hi #done#done

@@ -16,7 +16,7 @@ end
 
 #add method
 def add(item)
-@pending << item
+@pending << item 
 return @pending
 end
 
@@ -29,8 +29,7 @@ end
 
 
 #complete method
-def complete(num)
-linenumber=num.to_i
+def complete(linenumber)
 @completed << @pending[linenumber-1]
 @pending.delete_at(linenumber - 1)
 return @completed
@@ -72,7 +71,7 @@ end
 
 #save
 def save
-f = File.open(@filename, "a")
+f = File.open(@filename, "w")
 str =""
 str = @todo
 f.puts(str)
