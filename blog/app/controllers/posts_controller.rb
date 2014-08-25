@@ -1,7 +1,15 @@
 class PostsController < ApplicationController
-def index
+
+ def index
+	 @search = Post.search do
+    fulltext params[:search]
+  end
+  @post = @search.results
 @posts = Post.where(user_id:current_user.id)
 end
+
+
+
 def show
 @posts = Post.find(params[:id])
 end

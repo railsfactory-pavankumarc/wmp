@@ -4,7 +4,7 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfiles
 
 default: &default
-  adapter: postgresql
+  adapter: mysql2
   encoding: utf8
   database: student
   pool: 5
