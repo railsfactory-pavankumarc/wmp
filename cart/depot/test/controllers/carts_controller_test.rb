@@ -24,16 +24,6 @@ class CartsControllerTest < ActionController::TestCase
     assert_redirected_to cart_path(assigns(:cart))
   end
 
-  #test "should show cart" do
-  #  get :show, id: @cart
-  #  assert_response :success
-  #end
-
-  #test "should get edit" do
-   # get :edit, id: @cart
-    #assert_response :success
-  #end
-
   test "should update cart" do
     patch :update, id: @cart, cart: {  }
     assert_redirected_to cart_path(assigns(:cart))
